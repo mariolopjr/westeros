@@ -6,7 +6,7 @@ COPY build_files /
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable
 
 ## Other possible base images include:
-# FROM ghcr.io/ublue-os/bazzite:latest
+# FROM ghcr.io/ublue-os/bazzite:lat-nvidiaest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
 # 
 # ... and so on, here are more base images
