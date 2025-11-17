@@ -2,23 +2,32 @@
 
 set -ouex pipefail
 
-### Install packages
+### Install packages from terra
+# dnf5 -y config-manager setopt "terra".enabled=true
+# dnf5 -y config-manager setopt "terra-nvidia".enabled=true
+# dnf5 install -y \
+#     rofi
+# dnf5 -y config-manager setopt "terra".disabled=true
+# dnf5 -y config-manager setopt "terra-nvidia".disabled=true
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+# Install from ublue staging
+# TODO: add udica: https://github.com/containers/udica
+dnf5 -y copr enable ublue-os/staging
+dnf5 install -y              \
+    jetbrains-mono-fonts-all \
+    flatpak-builder          \
+    neovim                   \
+    firewall-config
+dnf5 -y copr disable ublue-os/staging
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+# Install Ghostty
+dnf5 -y copr enable scottames/ghostty
+dnf5 install -y ghostty
+dnf5 -y copr disable scottames/ghostty
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+# Run scripts
+/ctx/1password.sh
 
-#### Example for enabling a System Unit File
-
+### Enable services
 systemctl enable podman.socket
+
