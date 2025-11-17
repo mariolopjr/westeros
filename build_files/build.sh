@@ -6,8 +6,8 @@ dnf5 -y config-manager setopt "terra".enabled=true
 dnf5 -y config-manager setopt "terra-nvidia".enabled=true
 dnf5 install -y \
     coolercontrol liquidctl
-dnf5 -y config-manager setopt "terra".disabled=true
-dnf5 -y config-manager setopt "terra-nvidia".disabled=true
+dnf5 -y config-manager setopt "terra".enabled=false
+dnf5 -y config-manager setopt "terra-nvidia".enabled=false
 
 # Install from ublue staging
 # TODO: add udica: https://github.com/containers/udica
