@@ -1,10 +1,9 @@
 #!/usr/bin/env sh
+set ${SET_X:+-x} -eou pipefail
 
 # Additional thanks to bos for this script from https://github.com/bsherman/bos/raw/refs/heads/main/desktop-1password.sh
 # Thanks to bri for the inspiration! My script is mostly based on this example:
 # https://github.com/briorg/bluefin/blob/c62c30a04d42fd959ea770722c6b51216b4ec45b/scripts/1password.sh
-
-set ${SET_X:+-x} -eou pipefail
 
 echo "Installing 1Password"
 
