@@ -4,7 +4,6 @@ set ${SET_X:+-x} -eou pipefail
 ### Install packages
 # TODO: add udica: https://github.com/containers/udica
 dnf5 install -y \
-    chezmoi \
     firewall-config \
     flatpak-builder \
     jetbrains-mono-fonts-all \
