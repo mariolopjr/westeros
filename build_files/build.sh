@@ -10,12 +10,10 @@ dnf5 install -y \
     neovim
 
 ### Install packages from terra
-dnf5 -y config-manager setopt "terra".enabled=true
-dnf5 -y config-manager setopt "terra-nvidia".enabled=true
+dnf5 -y config-manager setopt "terra".enabled=1
 dnf5 install -y \
     coolercontrol liquidctl
-dnf5 -y config-manager setopt "terra".enabled=false
-dnf5 -y config-manager setopt "terra-nvidia".enabled=false
+dnf5 -y config-manager setopt "terra".enabled=0
 
 # Install from ublue staging
 # dnf5 -y copr enable ublue-os/staging
