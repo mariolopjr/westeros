@@ -27,6 +27,8 @@ dnf5 -y copr disable wezfurlong/wezterm-nightly
 /ctx/1password.sh
 /ctx/lact.sh
 
+/ctx/remove-packages.sh
+
 ### Enable services
 systemctl enable podman.socket
 systemctl enable coolercontrold
