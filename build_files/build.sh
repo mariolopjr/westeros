@@ -7,7 +7,8 @@ dnf5 install -y \
     firewall-config \
     flatpak-builder \
     jetbrains-mono-fonts-all \
-    neovim
+    neovim \
+    restic
 
 ### Install packages from terra
 dnf5 -y config-manager setopt "terra".enabled=1
