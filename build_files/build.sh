@@ -26,7 +26,6 @@ dnf5 -y copr disable wezfurlong/wezterm-nightly
 # Run scripts
 /ctx/1password.sh
 /ctx/lact.sh
-/ctx/install-flatpaks.sh
 
 /ctx/remove-packages.sh
 
